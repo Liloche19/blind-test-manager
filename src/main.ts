@@ -1,4 +1,4 @@
 import { bootstrapApplication } from "@angular/platform-browser";
-import { Counter } from "./app/app";
+import { App } from "./app/app";
 
-bootstrapApplication(Counter).catch((err) => console.error(err));
+bootstrapApplication(App).catch((err) => console.error(err));

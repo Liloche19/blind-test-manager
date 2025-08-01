@@ -1,2 +1,6 @@
-<app-counter [team]="'TeamA'"></app-counter>
-<app-counter [team]="'TeamB'"></app-counter>
+<div *ngFor="let team of teamNames">
+  <app-counter [team]="team" (notifyChange)="blockCounters()"></app-counter>
+  <p>-----------------------------------------------------</p>
+</div>
+<p>round n°{{ round }}</p>
+<button (click)="newRound()">Start a new round!</button>
