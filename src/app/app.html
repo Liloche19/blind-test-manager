@@ -1,6 +1,10 @@
-<div *ngFor="let team of teamNames">
-  <app-counter [team]="team" (notifyChange)="blockCounters()"></app-counter>
-  <p>-----------------------------------------------------</p>
+<div class="d-flex justify-content-around">
+  <div *ngFor="let team of teamNames" class="p-2">
+    <app-counter [team]="team" (notifyChange)="blockCounters()"></app-counter>
+  </div>
 </div>
-<p>round n°{{ round }}</p>
-<button (click)="newRound()">Start a new round!</button>
+<div class="d-flex justify-content-around align-div-content-center m-5">
+  <p class="mb-2">round n°{{ round }}</p>
+  <button (click)="newRound()" class="main-btn my-1">Start next round!</button>
+  <p class="mt-2">Total points: {{ getTotalPoints() }}</p>
+</div>

@@ -1,0 +1,24 @@
+@use "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
+.btn-available {
+  @extend .btn;
+  @extend .btn-outline-primary;
+}
+
+.btn-unavailable {
+  @extend .btn;
+  @extend .btn-outline-secondary;
+}
+
+.main-btn {
+  @extend .btn;
+  @extend .btn-primary;
+  @extend .btn-lg;
+}
+
+.align-div-content-center {
+  @extend .d-flex;
+  @extend .flex-column;
+  @extend .align-items-center;
+  text-align: center;
+}

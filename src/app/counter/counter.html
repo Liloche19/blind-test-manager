@@ -1,2 +1,10 @@
-<p>{{ team }}'s score: {{ score }}</p>
-<button (click)="increment()">increment</button>
+<div class="align-div-content-center">
+  <p>{{ team }}'s score: {{ score }}</p>
+  <button
+    (click)="increment()"
+    [class.btn-available]="clickable"
+    [class.btn-unavailable]="!clickable"
+  >
+    increment
+  </button>
+</div>

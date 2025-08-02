@@ -3,7 +3,7 @@ import { Component, Input, Output, EventEmitter } from "@angular/core";
 @Component({
   selector: "app-counter",
   templateUrl: "./counter.html",
-  styleUrls: ["./counter.css"],
+  styleUrls: ["./counter.scss"],
 })
 export class Counter {
   @Input() team: string = "";
