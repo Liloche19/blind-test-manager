@@ -2,6 +2,18 @@ import { Component, ViewChildren, QueryList } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { Counter } from "./counter/counter";
 
+export class Button {
+  value: number;
+  name: string;
+  id: number = 0;
+
+  constructor(name: string, value: number, id: number) {
+    this.name = name;
+    this.value = value;
+    this.id = id;
+  }
+}
+
 @Component({
   selector: "app-root",
   templateUrl: "./app.html",
@@ -10,33 +22,27 @@ import { Counter } from "./counter/counter";
   imports: [CommonModule, Counter],
 })
 export class App {
-  round = 0;
-  teamNames = [
-    "TeamA",
-    "TeamB",
-    "TeamC",
-    "teamD",
-    "TeamE",
-    "TeamF",
-    "TeamG",
-    "TeamH",
-    "TeamI",
-    "TeamJ",
-    "TeamK",
-    "TeamL",
+  round = 1;
+  teamNames = ["TeamA", "TeamB", "TeamC"];
+  buttons = [
+    new Button("Artist", 1, 0),
+    new Button("Title", 1, 1),
+    new Button("Release date", 0.5, 2),
   ];
   @ViewChildren(Counter) teams!: QueryList<Counter>;
 
-  blockCounters() {
+  blockCounters(id: number) {
     this.teams.forEach((counter) => {
-      counter.clickable = false;
+      counter.clickable[id] = false;
     });
   }
 
   newRound() {
     this.round++;
     this.teams.forEach((counter) => {
-      counter.clickable = true;
+      for (let i = 0; i < counter.clickable.length; i++) {
+        counter.clickable[i] = true;
+      }
     });
   }
 

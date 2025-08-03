@@ -1,6 +1,10 @@
 <div class="d-flex justify-content-around">
   <div *ngFor="let team of teamNames" class="p-2">
-    <app-counter [team]="team" (notifyChange)="blockCounters()"></app-counter>
+    <app-counter
+      [team]="team"
+      [buttons]="buttons"
+      (notify)="blockCounters($event)"
+    ></app-counter>
   </div>
 </div>
 <div class="d-flex justify-content-around align-div-content-center m-5">
