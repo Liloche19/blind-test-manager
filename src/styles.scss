@@ -5,9 +5,19 @@
   @extend .btn-outline-primary;
 }
 
+.btn-available:hover {
+  @extend .btn;
+  @extend .btn-outline-success;
+}
+
 .btn-unavailable {
   @extend .btn;
-  @extend .btn-outline-secondary;
+  @extend .btn-success;
+}
+
+.btn-unavailable:hover {
+  @extend .btn;
+  @extend .btn-outline-danger;
 }
 
 .main-btn {

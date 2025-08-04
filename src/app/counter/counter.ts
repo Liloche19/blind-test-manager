@@ -25,9 +25,10 @@ export class Counter {
   increment(button: Button) {
     if (this.clickable[button.id]) {
       this.score += button.value;
-      this.notify.emit(button.id);
+      this.clickable[button.id] = false;
     } else {
-      console.log(`Can't increment ${this.team}'s score!`);
+      this.clickable[button.id] = true;
+      this.score -= button.value;
     }
   }
 }
